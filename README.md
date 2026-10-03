@@ -93,6 +93,24 @@ Este script:
 - Compila a biblioteca com suporte completo à `libnl;
 - Gera uma biblioteca estática (`libumdp.a`) que pode ser facilmente integrada em projetos embebidos.
 
+---
+
+## Nota sobre os scripts de compilação
+
+Alguns dos scripts de build/cross-compilação neste repositório estão configurados para o nosso ambiente local de desenvolvimento. Podem conter caminhos absolutos, prefixos de toolchain, localizações de headers do kernel, caminhos do SDK/sysroot ou outras variáveis específicas do ambiente.
+
+Se fores usar estes scripts noutra máquina ou setup, deves revê-los e adaptá-los ao teu ambiente antes de os executar. Isto inclui, mas não se limita a:
+
+- Caminho/prefixo da toolchain RISC-V (ex.: `CROSS_COMPILE`, `PATH`)
+- Caminho do código-fonte/headers do kernel Linux
+- Caminhos do SDK do Milk-V Duo S / sysroot
+- Caminhos absolutos para dependências (ex.: `libnl-3`)
+- Arquitetura alvo e flags de compilação
+
+Os scripts são disponibilizados como referência e não garantimos que funcionem *out-of-the-box*.
+
+---
+
 ## Utilização
 
 Após a compilação, o módulo pode ser carregado com o comando:
